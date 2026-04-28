@@ -1,6 +1,6 @@
-# 🚨 RTOS Smart Home Security Controller (STM32)
+# 🚨 RTOS Based Smart Home Security Controller (STM32)
 
-A real-time smart home security system built using *STM32F030R8* and *FreeRTOS*. The system detects motion and intrusion using sensors, then activates security outputs such as RGB LED, buzzer, and relay.
+A real-time smart home security system built using **STM32F030R8** and **FreeRTOS**. The system detects motion and intrusion using sensors, then activates security outputs such as RGB LED, buzzer, and relay.
 
 ---
 
@@ -25,7 +25,7 @@ A real-time smart home security system built using *STM32F030R8* and *FreeRTOS*.
 * Buzzer
 * Relay Module
 * Jumper Wires
-* Breadboard
+* Bread Board
 * USB Cable
 
 ---
@@ -68,20 +68,20 @@ A real-time smart home security system built using *STM32F030R8* and *FreeRTOS*.
 
 ## 📂 Project Structure
 
-text
+```text
 Core.zip/
 Drivers.zip/
 Middlewares.zip/
 RTOS_Smart_Home_Security.ioc
 STM32F030R8TX_FLASH.id
 README.md
-
+```
 
 ---
 
 ## ▶️ How to Run
 
-1. Open the project in *STM32CubeIDE*
+1. Open the project in **STM32CubeIDE**
 2. Build the project
 3. Flash code to STM32 board
 4. Connect all sensors and modules
@@ -89,28 +89,60 @@ README.md
 6. Observe outputs using LED, buzzer, and relay
 
 ---
+## 📸 Hardware Setup & Output Explanation
 
-## 🧪 Expected Behavior
+### 🔧 Complete Prototype Setup
 
-### Safe Mode
+<img width="1280" height="963" alt="image" src="https://github.com/user-attachments/assets/81c52f52-5084-46bf-a2ed-c5a432ee903c" />
 
-* Green LED ON
-* Buzzer OFF
-* Relay OFF
-
-### Warning Mode
-
-* Yellow LED ON
-* Buzzer OFF
-* Relay OFF
-
-### Alarm Mode
-
-* Red LED ON
-* Buzzer ON
-* Relay ON
+**Explanation:**
+This image shows the full prototype implementation of the RTOS Smart Home Security Controller using the STM32 Nucleo-F030R8 board. The system is connected with PIR sensor, ultrasonic sensor, RGB LED, buzzer, relay module, and jumper wiring through the embedded trainer kit and breadboard. This setup demonstrates real hardware interfacing, sensor integration, and embedded system prototyping.
 
 ---
+
+### 🟢 Safe State Output
+
+<img width="1280" height="963" alt="image" src="https://github.com/user-attachments/assets/e00c4f56-27f1-4938-b804-3e2f20488364" />
+
+**Explanation:**
+The RGB LED glows green when no motion or intrusion is detected. In this mode, the system is operating normally and continuously monitoring the environment through FreeRTOS tasks. The buzzer remains OFF and the relay remains OFF.
+
+**Condition:**
+
+* No motion detected
+* No nearby object
+* System secure
+
+---
+
+### 🔵 Warning / Detection State
+
+<img width="1280" height="963" alt="image" src="https://github.com/user-attachments/assets/193c6c8f-8636-49b5-9c81-c6cce16bb3a4" />
+
+**Explanation:**
+The RGB LED changes to blue when sensor activity or warning conditions are detected. This indicates that the system has identified movement or a state change and is evaluating the environment. It acts as an intermediate alert before full alarm activation.
+
+**Condition:**
+
+* Motion detected or object activity sensed
+* Monitoring intensified
+* Alarm pending based on logic
+
+---
+
+### 🔴 Alarm State (Add when captured)
+
+<img width="1280" height="963" alt="WhatsApp Image 2026-04-28 at 3 14 12 PM" src="https://github.com/user-attachments/assets/4b7a2fc3-0432-4d4d-a8ac-51892292e5c2" />
+
+**Explanation:**
+In alarm mode, the RGB LED turns red, the buzzer activates, and the relay switches ON. This happens when motion and intrusion conditions are satisfied simultaneously. It represents an active security breach response.
+
+**Condition:**
+
+* Motion detected
+* Object within threshold distance
+* Security alarm triggered
+
 
 ## 💼 Skills Demonstrated
 
@@ -134,13 +166,3 @@ README.md
 * EEPROM Event Logging
 
 ---
-
-## 📸 Demo
-
-Add project photos or demo videos in this repository.
-
----
-
-## 👩‍💻 Author
-
-Developed as an embedded systems project using STM32 + FreeRTOS.
