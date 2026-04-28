@@ -25,6 +25,7 @@ A real-time smart home security system built using *STM32F030R8* and *FreeRTOS*.
 * Buzzer
 * Relay Module
 * Jumper Wires
+* Breadboard
 * USB Cable
 
 ---
@@ -68,10 +69,11 @@ A real-time smart home security system built using *STM32F030R8* and *FreeRTOS*.
 ## 📂 Project Structure
 
 text
-Core/
-Drivers/
-Middlewares/
+Core.zip/
+Drivers.zip/
+Middlewares.zip/
 RTOS_Smart_Home_Security.ioc
+STM32F030R8TX_FLASH.id
 README.md
 
 
